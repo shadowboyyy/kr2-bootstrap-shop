@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас — Pet Steps</title>
+  <link rel="icon" href="images/paw.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body id="top">
+  <a class="visually-hidden-focusable skip-link" href="#main">К содержанию</a>
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Основное меню">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-1 gap-lg-2 me-0 me-lg-3" href="index.html">
+          <img src="images/paw.svg" width="32" height="32" alt=""> Pet Steps
+        </a>
+        <button class="navbar-toggler ms-auto px-1" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+          aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse order-2 order-lg-0" id="mainNavbar">
+          <ul class="navbar-nav ms-auto gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Услуги и цены</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="about.html">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <a class="btn btn-primary btn-sm text-nowrap order-1 order-lg-0 ms-1 ms-lg-3" href="product.html#booking">Заказать выгул</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-4 mb-5" id="main">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">О нас</li>
+      </ol>
+    </nav>
+
+    <section class="row align-items-center g-4 mb-5" aria-labelledby="about-title">
+      <div class="col-12 col-lg-6">
+        <h1 class="display-6 fw-bold" id="about-title">О нас</h1>
+        <p class="lead">Pet Steps помогает найти выгульщика, зооняню или грумера в Москве.</p>
+        <p class="text-muted">
+          Знакомимся с питомцем заранее: узнаём его привычки, любимые маршруты и особенности ухода.
+          Работаем в Сокольниках, Хамовниках и Митино.
+        </p>
+        <a class="btn btn-primary" href="catalog.html">Посмотреть услуги и цены</a>
+      </div>
+      <div class="col-12 col-lg-6">
+        <img class="service-photo rounded-4" src="images/service-walk.jpg"
+          alt="Человек гуляет с собакой на поводке в парке" width="900" height="600">
+      </div>
+    </section>
+
+    <section aria-labelledby="how-title">
+      <h2 class="h3 mb-3" id="how-title">Как записаться</h2>
+      <ol class="row g-3 list-unstyled mb-0">
+        <li class="col-12 col-md-4">
+          <div class="p-4 border rounded-3 h-100 bg-white">
+            <h3 class="h5">1. Выберите услугу</h3>
+            <p class="text-muted mb-0">В каталоге есть разовый выгул, абонементы, передержка, груминг и зооняня.</p>
+          </div>
+        </li>
+        <li class="col-12 col-md-4">
+          <div class="p-4 border rounded-3 h-100 bg-white">
+            <h3 class="h5">2. Укажите удобное время</h3>
+            <p class="text-muted mb-0">В заявке выберите дату и расскажите, что нужно знать о питомце.</p>
+          </div>
+        </li>
+        <li class="col-12 col-md-4">
+          <div class="p-4 border rounded-3 h-100 bg-white">
+            <h3 class="h5">3. Посмотрите фотоотчёт</h3>
+            <p class="text-muted mb-0">После выгула специалист делится снимком и короткой заметкой о прогулке.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer pt-5 pb-3">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-md-between gap-4">
+        <div class="site-footer__intro">
+          <a class="site-footer__brand d-inline-flex align-items-center gap-2 mb-3" href="index.html">
+            <img src="images/paw.svg" width="32" height="32" alt=""> Pet Steps
+          </a>
+          <p class="mb-0">Выгул, передержка, груминг и зооняня в Москве.</p>
+        </div>
+        <nav class="flex-shrink-0" aria-label="Разделы сайта">
+          <h2 class="h6 mb-3">Разделы</h2>
+          <ul class="list-unstyled vstack gap-2 mb-0">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Услуги и цены</a></li>
+            <li><a href="about.html">О нас</a></li>
+          </ul>
+        </nav>
+        <div class="text-break">
+          <h2 class="h6 mb-3">Адрес и связь</h2>
+          <address class="vstack gap-2 mb-2">
+            <div class="site-footer__contact-line">
+              <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>
+              </svg>
+              <span>Кампус РТУ МИРЭА<br>Москва, проспект Вернадского, 78</span>
+            </div>
+            <div class="site-footer__contact-line">
+              <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a13 13 0 0 1-6-6l2-2-2-5Z"/>
+              </svg>
+              <span>Телефон кампуса: <a href="tel:+74996008080">+7 (499) 600-80-80</a></span>
+            </div>
+          </address>
+          <div class="site-footer__contact-line mb-2">
+            <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+              </svg>
+            <span>Запись на услуги: ежедневно с 09:00 до 20:00.</span>
+          </div>
+          <div class="site-footer__contact-line">
+            <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>
+              </svg>
+            <span>Почта проекта: <a href="mailto:hello@petsteps.example">hello@petsteps.example</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom d-flex flex-wrap justify-content-between gap-2 mt-4 pt-3">
+        <small>© 2026 Pet Steps. Все права защищены.</small>
+      </div>
+    </div>
+  </footer>
+
+  <a class="btn btn-primary back-top" href="#top" hidden>Наверх</a>
+
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

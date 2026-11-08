@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Steps — выгул и присмотр за питомцами</title>
+  <link rel="icon" href="images/paw.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body id="top">
+  <a class="visually-hidden-focusable skip-link" href="#main">К содержанию</a>
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Основное меню">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-1 gap-lg-2 me-0 me-lg-3" href="index.html">
+          <img src="images/paw.svg" width="32" height="32" alt=""> Pet Steps
+        </a>
+        <button class="navbar-toggler ms-auto px-1" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+          aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse order-2 order-lg-0" id="mainNavbar">
+          <ul class="navbar-nav ms-auto gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Услуги и цены</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <a class="btn btn-primary btn-sm text-nowrap order-1 order-lg-0 ms-1 ms-lg-3" href="product.html#booking">Заказать выгул</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero-блок: две колонки на больших экранах -->
+    <section class="container my-5">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-6">
+          <p class="hero__location mb-3">Сервис для питомцев в Москве</p>
+          <h1 class="display-5 fw-bold">На прогулку? <br>Мы уже идём!</h1>
+          <p class="lead text-muted my-4">
+            Pet Steps помогает найти выгульщика или зооняню рядом с домом.
+            Выберите разовый выгул или абонемент и посмотрите, как прошла прогулка, в фотоотчёте.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary btn-lg" href="product.html#booking">Заказать выгул</a>
+            <a class="btn btn-outline-primary btn-lg" href="#directions">Все направления</a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <img class="hero__image img-fluid rounded-4" src="images/dog-walk.jpg"
+            alt="Две собаки бегут по тропинке в парке" width="1100" height="734">
+        </div>
+      </div>
+    </section>
+
+    <section class="section-strip py-4" id="directions">
+      <div class="container">
+        <h2 class="h4 mb-3">Чем можем помочь</h2>
+        <div class="directions">
+          <a class="directions__link" href="catalog.html?type=walk"><span aria-hidden="true">🐾</span> Выгул</a>
+          <a class="directions__link" href="catalog.html?type=boarding"><span aria-hidden="true">🏠</span> Передержка</a>
+          <a class="directions__link" href="catalog.html?type=grooming"><span aria-hidden="true">✂️</span> Груминг</a>
+          <a class="directions__link" href="catalog.html?type=sitter"><span aria-hidden="true">🐈</span> Зооняня</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container my-5" id="popular">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-4">
+        <h2 class="h3 mb-0">Популярные услуги</h2>
+        <a href="catalog.html">Смотреть все услуги и цены</a>
+      </div>
+      <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4" data-service="walk">
+            <article class="card service-card h-100">
+              <img class="service-photo service-card__photo" src="images/service-walk.jpg"
+                alt="Человек гуляет с собакой на поводке в парке" width="900" height="600" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Индивидуальный выгул</h3>
+                <p class="card-text text-muted mb-2">Прогулка рядом с домом в привычном для собаки темпе.</p>
+                <p class="service-card__meta small text-muted mb-3">30 минут · Сокольники, Хамовники</p>
+                <div class="d-flex align-items-center flex-wrap gap-2 mt-auto mb-3">
+                  <strong class="service-card__price">590 ₽</strong>
+                <span class="badge text-bg-warning">Хит</span>
+                </div>
+                <button class="btn btn-outline-primary align-self-start" type="button"
+                  data-bs-toggle="modal" data-bs-target="#serviceModal" aria-label="Подробнее: Индивидуальный выгул">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" data-service="pass">
+            <article class="card service-card h-100">
+              <img class="service-photo service-card__photo" src="images/service-pass.jpg"
+                alt="Женщина гуляет с собакой в парке" width="900" height="600" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Абонемент на 5 прогулок</h3>
+                <p class="card-text text-muted mb-2">Пять индивидуальных прогулок по согласованному графику.</p>
+                <p class="service-card__meta small text-muted mb-3">5 × 30 минут · Сокольники, Хамовники</p>
+                <div class="d-flex align-items-center flex-wrap gap-2 mt-auto mb-3">
+                  <strong class="service-card__price">2 490 ₽</strong>
+                <span class="badge text-bg-danger">Акция</span>
+                </div>
+                <button class="btn btn-outline-primary align-self-start" type="button"
+                  data-bs-toggle="modal" data-bs-target="#serviceModal" aria-label="Подробнее: Абонемент на 5 прогулок">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" data-service="sitter">
+            <article class="card service-card h-100">
+              <img class="service-photo service-card__photo" src="images/service-sitter.jpg"
+                alt="Женщина держит кошку на руках" width="900" height="600" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Зооняня на дом</h3>
+                <p class="card-text text-muted mb-2">Няня покормит питомца, поиграет с ним и поменяет воду.</p>
+                <p class="service-card__meta small text-muted mb-3">2 часа · Митино, Хамовники</p>
+                <div class="d-flex align-items-center flex-wrap gap-2 mt-auto mb-3">
+                  <strong class="service-card__price">990 ₽</strong>
+                </div>
+                <button class="btn btn-outline-primary align-self-start" type="button"
+                  data-bs-toggle="modal" data-bs-target="#serviceModal" aria-label="Подробнее: Зооняня на дом">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+          </div>
+      </div>
+    </section>
+
+    <!-- Блок преимуществ из примера сетки Bootstrap -->
+    <section class="container my-5" id="benefits">
+      <h2 class="h3 mb-4">Почему Pet Steps</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="p-4 border rounded-3 h-100 bg-white">
+            <span class="benefit-sticker mb-3" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s7-3 7-10V5l-7-3-7 3v7c0 7 7 10 7 10Z"/><path d="m9 12 2 2 4-4"/>
+              </svg>
+            </span>
+            <h3 class="h5">Проверенные специалисты</h3>
+            <p class="mb-0 text-muted">Знакомимся с выгульщиками и зоонянями и проверяем их опыт работы с питомцами.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-4 border rounded-3 h-100 bg-white">
+            <span class="benefit-sticker mb-3" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-12 5 2 2 4-4"/>
+              </svg>
+            </span>
+            <h3 class="h5">Удобное время</h3>
+            <p class="mb-0 text-muted">Выбирайте подходящее время на один день или планируйте прогулки на неделю вперёд.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-4 border rounded-3 h-100 bg-white">
+            <span class="benefit-sticker mb-3" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 7h3l2-3h4l2 3h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><circle cx="12" cy="13" r="3"/>
+              </svg>
+            </span>
+            <h3 class="h5">Фото после прогулки</h3>
+            <p class="mb-0 text-muted">Специалист присылает снимок и пару слов о прогулке. <a href="product.html#report">Посмотреть пример</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats py-4">
+      <div class="container">
+        <h2 class="h4 mb-1">Pet Steps в цифрах</h2>
+        <p class="small mb-3">Пример статистики сервиса</p>
+        <div class="row g-3">
+          <div class="col-12 col-md-4"><strong class="stats__number">480</strong> питомцев на прогулках</div>
+          <div class="col-12 col-md-4"><strong class="stats__number">320</strong> довольных клиентов</div>
+          <div class="col-12 col-md-4"><strong class="stats__number">18</strong> выгульщиков в команде</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer pt-5 pb-3">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-md-between gap-4">
+        <div class="site-footer__intro">
+          <a class="site-footer__brand d-inline-flex align-items-center gap-2 mb-3" href="index.html">
+            <img src="images/paw.svg" width="32" height="32" alt=""> Pet Steps
+          </a>
+          <p class="mb-0">Выгул, передержка, груминг и зооняня в Москве.</p>
+        </div>
+        <nav class="flex-shrink-0" aria-label="Разделы сайта">
+          <h2 class="h6 mb-3">Разделы</h2>
+          <ul class="list-unstyled vstack gap-2 mb-0">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Услуги и цены</a></li>
+            <li><a href="about.html">О нас</a></li>
+          </ul>
+        </nav>
+        <div class="text-break">
+          <h2 class="h6 mb-3">Адрес и связь</h2>
+          <address class="vstack gap-2 mb-2">
+            <div class="site-footer__contact-line">
+              <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>
+              </svg>
+              <span>Кампус РТУ МИРЭА<br>Москва, проспект Вернадского, 78</span>
+            </div>
+            <div class="site-footer__contact-line">
+              <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a13 13 0 0 1-6-6l2-2-2-5Z"/>
+              </svg>
+              <span>Телефон кампуса: <a href="tel:+74996008080">+7 (499) 600-80-80</a></span>
+            </div>
+          </address>
+          <div class="site-footer__contact-line mb-2">
+            <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+              </svg>
+            <span>Запись на услуги: ежедневно с 09:00 до 20:00.</span>
+          </div>
+          <div class="site-footer__contact-line">
+            <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>
+              </svg>
+            <span>Почта проекта: <a href="mailto:hello@petsteps.example">hello@petsteps.example</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom d-flex flex-wrap justify-content-between gap-2 mt-4 pt-3">
+        <small>© 2026 Pet Steps. Все права защищены.</small>
+      </div>
+    </div>
+  </footer>
+
+  <a class="btn btn-primary back-top" href="#top" hidden>Наверх</a>
+
+  <!-- Одно модальное окно Bootstrap для всех карточек -->
+  <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="serviceModalLabel">Об услуге</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <img class="service-photo service-photo--modal rounded mb-3" src="images/service-walk.jpg" id="modal-image"
+                alt="Человек гуляет с собакой на поводке в парке" width="900" height="600" loading="lazy">
+          <p id="modal-description"></p>
+          <p class="text-muted mb-2" id="modal-meta"></p>
+          <p class="fw-bold mb-0" id="modal-price"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          <a class="btn btn-primary" id="modal-link" href="product.html">Перейти к услуге</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

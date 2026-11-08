@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги и цены — Pet Steps</title>
+  <link rel="icon" href="images/paw.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body id="top">
+  <a class="visually-hidden-focusable skip-link" href="#main">К содержанию</a>
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Основное меню">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-1 gap-lg-2 me-0 me-lg-3" href="index.html">
+          <img src="images/paw.svg" width="32" height="32" alt=""> Pet Steps
+        </a>
+        <button class="navbar-toggler ms-auto px-1" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+          aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse order-2 order-lg-0" id="mainNavbar">
+          <ul class="navbar-nav ms-auto gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="catalog.html">Услуги и цены</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <a class="btn btn-primary btn-sm text-nowrap order-1 order-lg-0 ms-1 ms-lg-3" href="product.html#booking">Заказать выгул</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-4 mb-5" id="main">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Услуги и цены</li>
+      </ol>
+    </nav>
+    <h1 class="display-6 fw-bold">Услуги и цены</h1>
+    <p class="text-muted mb-4">Подберите прогулку или уход за питомцем в удобном районе Москвы.</p>
+
+    <div class="row g-4">
+      <aside class="col-12 col-md-4 col-xl-3">
+        <form class="filters p-3 p-lg-4 border rounded-3 bg-white" id="filters">
+          <h2 class="h5 mb-3">Фильтры</h2>
+          <div class="mb-3">
+            <label class="form-label" for="filter-type">Тип услуги</label>
+            <select class="form-select" id="filter-type" name="type">
+              <option value="">Все услуги</option>
+              <option value="walk">Выгул</option>
+              <option value="boarding">Передержка</option>
+              <option value="grooming">Груминг</option>
+              <option value="sitter">Зооняня</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="filter-duration">Длительность</label>
+            <select class="form-select" id="filter-duration" name="duration">
+              <option value="">Любая</option>
+              <option value="30">30 минут</option>
+              <option value="60">60 минут</option>
+              <option value="120">2 часа</option>
+              <option value="1440">24 часа</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="filter-format">Формат выгула</label>
+            <select class="form-select" id="filter-format" name="format">
+              <option value="">Любой</option>
+              <option value="individual">Индивидуальный</option>
+              <option value="group">Групповой</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="filter-district">Район</label>
+            <select class="form-select" id="filter-district" name="district">
+              <option value="">Все районы</option>
+              <option value="sokolniki">Сокольники</option>
+              <option value="khamovniki">Хамовники</option>
+              <option value="mitino">Митино</option>
+            </select>
+          </div>
+          <button type="reset" class="btn btn-outline-secondary">Сбросить фильтры</button>
+        </form>
+      </aside>
+
+      <section class="col-12 col-md-8 col-xl-9" aria-label="Результаты поиска услуг">
+        <p class="text-muted mb-3" id="service-count" role="status">Найдено услуг: 6</p>
+        <div class="row g-3 g-lg-4">
+          <div class="col-12 col-lg-6 col-xl-4" data-service="walk"
+               data-type="walk" data-duration="30" data-format="individual" data-district="sokolniki khamovniki">
+            <article class="card service-card h-100">
+              <img class="service-photo service-card__photo" src="images/service-walk.jpg"
+                alt="Человек гуляет с собакой на поводке в парке" width="900" height="600" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h2 class="card-title h5">Индивидуальный выгул</h2>
+                <p class="card-text text-muted mb-2">Прогулка рядом с домом в привычном для собаки темпе.</p>
+                <p class="service-card__meta small text-muted mb-3">30 минут · Сокольники, Хамовники</p>
+                <div class="d-flex align-items-center flex-wrap gap-2 mt-auto mb-3">
+                  <strong class="service-card__price">590 ₽</strong>
+                <span class="badge text-bg-warning">Хит</span>
+                </div>
+                <button class="btn btn-outline-primary align-self-start" type="button"
+                  data-bs-toggle="modal" data-bs-target="#serviceModal" aria-label="Подробнее: Индивидуальный выгул">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-4" data-service="group"
+               data-type="walk" data-duration="60" data-format="group" data-district="sokolniki">
+            <article class="card service-card h-100">
+              <img class="service-photo service-card__photo" src="images/dog-walk.jpg"
+                alt="Две собаки бегут по дорожке вместе" width="1100" height="734" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h2 class="card-title h5">Групповой выгул</h2>
+                <p class="card-text text-muted mb-2">Прогулка в парке в компании до трёх дружелюбных собак.</p>
+                <p class="service-card__meta small text-muted mb-3">60 минут · Сокольники</p>
+                <div class="d-flex align-items-center flex-wrap gap-2 mt-auto mb-3">
+                  <strong class="service-card__price">490 ₽</strong>
+                <span class="badge text-bg-success">Онлайн-запись</span>
+                </div>
+                <button class="btn btn-outline-primary align-self-start" type="button"
+                  data-bs-toggle="modal" data-bs-target="#serviceModal" aria-label="Подробнее: Групповой выгул">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-4" data-service="pass"
+               data-type="walk" data-duration="30" data-format="individual" data-district="sokolniki khamovniki">
+            <article class="card service-card h-100">
+              <img class="service-photo service-card__photo" src="images/service-pass.jpg"
+                alt="Женщина гуляет с собакой в парке" width="900" height="600" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h2 class="card-title h5">Абонемент на 5 прогулок</h2>
+                <p class="card-text text-muted mb-2">Пять индивидуальных прогулок по согласованному графику.</p>
+                <p class="service-card__meta small text-muted mb-3">5 × 30 минут · Сокольники, Хамовники</p>
+                <div class="d-flex align-items-center flex-wrap gap-2 mt-auto mb-3">
+                  <strong class="service-card__price">2 490 ₽</strong>
+                <span class="badge text-bg-danger">Акция</span>
+                </div>
+                <button class="btn btn-outline-primary align-self-start" type="button"
+                  data-bs-toggle="modal" data-bs-target="#serviceModal" aria-label="Подробнее: Абонемент на 5 прогулок">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-4" data-service="boarding"
+               data-type="boarding" data-duration="1440" data-format="" data-district="mitino">
+            <article class="card service-card h-100">
+              <img class="service-photo service-card__photo" src="images/service-boarding.jpg"
+                alt="Собака отдыхает в лежанке дома" width="900" height="600" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h2 class="card-title h5">Домашняя передержка</h2>
+                <p class="card-text text-muted mb-2">Питомец гостит у специалиста, пока вы в отъезде.</p>
+                <p class="service-card__meta small text-muted mb-3">24 часа · Митино</p>
+                <div class="d-flex align-items-center flex-wrap gap-2 mt-auto mb-3">
+                  <strong class="service-card__price">1 490 ₽</strong>
+                </div>
+                <button class="btn btn-outline-primary align-self-start" type="button"
+                  data-bs-toggle="modal" data-bs-target="#serviceModal" aria-label="Подробнее: Домашняя передержка">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-4" data-service="grooming"
+               data-type="grooming" data-duration="60" data-format="" data-district="khamovniki">
+            <article class="card service-card h-100">
+              <img class="service-photo service-card__photo" src="images/service-grooming.jpg"
+                alt="Женщина моет собаку в ванне" width="900" height="600" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h2 class="card-title h5">Груминг</h2>
+                <p class="card-text text-muted mb-2">Мытьё, вычёсывание и уход за когтями по записи.</p>
+                <p class="service-card__meta small text-muted mb-3">60 минут · Хамовники</p>
+                <div class="d-flex align-items-center flex-wrap gap-2 mt-auto mb-3">
+                  <strong class="service-card__price">1 290 ₽</strong>
+                <span class="badge text-bg-success">Онлайн-запись</span>
+                </div>
+                <button class="btn btn-outline-primary align-self-start" type="button"
+                  data-bs-toggle="modal" data-bs-target="#serviceModal" aria-label="Подробнее: Груминг">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-4" data-service="sitter"
+               data-type="sitter" data-duration="120" data-format="" data-district="mitino khamovniki">
+            <article class="card service-card h-100">
+              <img class="service-photo service-card__photo" src="images/service-sitter.jpg"
+                alt="Женщина держит кошку на руках" width="900" height="600" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h2 class="card-title h5">Зооняня на дом</h2>
+                <p class="card-text text-muted mb-2">Няня покормит питомца, поиграет с ним и поменяет воду.</p>
+                <p class="service-card__meta small text-muted mb-3">2 часа · Митино, Хамовники</p>
+                <div class="d-flex align-items-center flex-wrap gap-2 mt-auto mb-3">
+                  <strong class="service-card__price">990 ₽</strong>
+                </div>
+                <button class="btn btn-outline-primary align-self-start" type="button"
+                  data-bs-toggle="modal" data-bs-target="#serviceModal" aria-label="Подробнее: Зооняня на дом">
+                  Подробнее
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="alert alert-info" id="no-services" hidden>
+          По этим фильтрам ничего не найдено. Измените один из параметров или сбросьте фильтры.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer pt-5 pb-3">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-md-between gap-4">
+        <div class="site-footer__intro">
+          <a class="site-footer__brand d-inline-flex align-items-center gap-2 mb-3" href="index.html">
+            <img src="images/paw.svg" width="32" height="32" alt=""> Pet Steps
+          </a>
+          <p class="mb-0">Выгул, передержка, груминг и зооняня в Москве.</p>
+        </div>
+        <nav class="flex-shrink-0" aria-label="Разделы сайта">
+          <h2 class="h6 mb-3">Разделы</h2>
+          <ul class="list-unstyled vstack gap-2 mb-0">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Услуги и цены</a></li>
+            <li><a href="about.html">О нас</a></li>
+          </ul>
+        </nav>
+        <div class="text-break">
+          <h2 class="h6 mb-3">Адрес и связь</h2>
+          <address class="vstack gap-2 mb-2">
+            <div class="site-footer__contact-line">
+              <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>
+              </svg>
+              <span>Кампус РТУ МИРЭА<br>Москва, проспект Вернадского, 78</span>
+            </div>
+            <div class="site-footer__contact-line">
+              <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a13 13 0 0 1-6-6l2-2-2-5Z"/>
+              </svg>
+              <span>Телефон кампуса: <a href="tel:+74996008080">+7 (499) 600-80-80</a></span>
+            </div>
+          </address>
+          <div class="site-footer__contact-line mb-2">
+            <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+              </svg>
+            <span>Запись на услуги: ежедневно с 09:00 до 20:00.</span>
+          </div>
+          <div class="site-footer__contact-line">
+            <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>
+              </svg>
+            <span>Почта проекта: <a href="mailto:hello@petsteps.example">hello@petsteps.example</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom d-flex flex-wrap justify-content-between gap-2 mt-4 pt-3">
+        <small>© 2026 Pet Steps. Все права защищены.</small>
+      </div>
+    </div>
+  </footer>
+
+  <a class="btn btn-primary back-top" href="#top" hidden>Наверх</a>
+
+  <!-- Одно модальное окно Bootstrap для всех карточек -->
+  <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="serviceModalLabel">Об услуге</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <img class="service-photo service-photo--modal rounded mb-3" src="images/service-walk.jpg" id="modal-image"
+                alt="Человек гуляет с собакой на поводке в парке" width="900" height="600" loading="lazy">
+          <p id="modal-description"></p>
+          <p class="text-muted mb-2" id="modal-meta"></p>
+          <p class="fw-bold mb-0" id="modal-price"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          <a class="btn btn-primary" id="modal-link" href="product.html">Перейти к услуге</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -35,12 +35,17 @@
             <li class="nav-item">
               <a class="nav-link" href="contacts.html">Контакты</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="account.html">Мой питомец</a>
+            </li>
           </ul>
         </div>
         <a class="btn btn-primary btn-sm text-nowrap order-1 order-lg-0 ms-1 ms-lg-3" href="product.html#booking">Заказать выгул</a>
       </div>
     </nav>
   </header>
+
+  <div id="storage-warning" class="container alert alert-warning mt-3" role="alert" hidden></div>
 
   <main id="main">
     <!-- Hero-блок: две колонки на больших экранах -->
@@ -55,7 +60,7 @@
           </p>
           <div class="d-flex flex-wrap gap-2">
             <a class="btn btn-primary btn-lg" href="product.html#booking">Заказать выгул</a>
-            <a class="btn btn-outline-primary btn-lg" href="#directions">Все направления</a>
+            <a class="btn btn-outline-primary btn-lg" href="#quiz">Подобрать услугу</a>
           </div>
         </div>
         <div class="col-12 col-lg-6">
@@ -185,6 +190,115 @@
       </div>
     </section>
 
+    <section class="container my-5" id="quiz" aria-labelledby="quiz-title">
+      <div class="p-3 p-md-4 section-strip rounded-3">
+        <div class="row g-4">
+          <div class="col-12 col-lg-4">
+            <h2 class="h3" id="quiz-title">Какая услуга подойдёт?</h2>
+            <p class="mb-0">Ответьте на три вопроса — подберём уход под ваши планы и привычки питомца.</p>
+          </div>
+          <div class="col-12 col-lg-8">
+            <form id="quiz-form" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-md-4">
+                  <label for="quiz-pet" class="form-label">Ваш питомец *</label>
+                  <select id="quiz-pet" name="pet" class="form-select" required>
+                    <option value="">Выберите</option>
+                    <option value="dog">Собака</option>
+                    <option value="cat">Кошка</option>
+                  </select>
+                  <div class="invalid-feedback">Выберите питомца.</div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <label for="quiz-need" class="form-label">Что нужно? *</label>
+                  <select id="quiz-need" name="need" class="form-select" required>
+                    <option value="">Выберите</option>
+                    <option value="walk">Прогулка</option>
+                    <option value="home">Присмотр дома</option>
+                    <option value="travel">Уезжаю на сутки</option>
+                    <option value="grooming">Уход за шерстью</option>
+                  </select>
+                  <div class="invalid-feedback">Выберите задачу.</div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <label for="quiz-rhythm" class="form-label" id="quiz-rhythm-label">Как часто? *</label>
+                  <select id="quiz-rhythm" name="rhythm" class="form-select" required>
+                    <option value="">Выберите</option>
+                    <option value="once">Один раз</option>
+                    <option value="regular">Регулярно</option>
+                    <option value="company">В компании собак</option>
+                  </select>
+                  <div class="invalid-feedback">Выберите вариант.</div>
+                </div>
+                <div class="col-12">
+                  <p id="quiz-hint" class="small mb-2">Для кошек доступны присмотр дома и передержка.</p>
+                  <button class="btn btn-primary" type="submit">Подобрать услугу</button>
+                </div>
+              </div>
+            </form>
+            <div id="quiz-result" class="bg-white p-3 rounded-3 mt-3" role="status" hidden>
+              <h3 class="h5" id="quiz-result-title"></h3>
+              <p id="quiz-result-description"></p>
+              <a class="btn btn-outline-primary" id="quiz-result-link" href="catalog.html">Посмотреть услугу</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container my-5" id="reviews" aria-labelledby="reviews-title">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <h2 class="h3 mb-0" id="reviews-title">Отзывы владельцев</h2>
+        <p class="mb-0 text-muted" id="review-summary" role="status"></p>
+      </div>
+      <p class="small text-muted">Здесь отображаются отзывы, оставленные в этом браузере.</p>
+      <div class="row g-4">
+        <div class="col-12 col-lg-7">
+          <p class="p-4 bg-white border rounded-3" id="reviews-empty">Пока нет отзывов. Расскажите о вашем опыте — ваш отзыв появится здесь.</p>
+          <div class="vstack gap-3" id="review-list"></div>
+        </div>
+        <div class="col-12 col-lg-5">
+          <form id="review-form" class="p-3 p-md-4 bg-white border rounded-3" novalidate>
+            <h3 class="h5">Оставить отзыв</h3>
+            <div class="mb-3">
+              <label class="form-label" for="review-name">Ваше имя *</label>
+              <input id="review-name" name="name" class="form-control" required minlength="2" maxlength="60" autocomplete="given-name">
+              <div class="invalid-feedback">Укажите имя от 2 до 60 символов.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="review-rating">Оценка *</label>
+              <select id="review-rating" name="rating" class="form-select" required>
+                <option value="">Выберите оценку</option>
+                <option value="5">5 — отлично</option><option value="4">4 — хорошо</option>
+                <option value="3">3 — нормально</option><option value="2">2 — плохо</option><option value="1">1 — очень плохо</option>
+              </select>
+              <div class="invalid-feedback">Поставьте оценку.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="review-text">Комментарий *</label>
+              <textarea id="review-text" name="text" class="form-control" rows="3" minlength="10" maxlength="800" required></textarea>
+              <div class="invalid-feedback">Напишите от 10 до 800 символов.</div>
+            </div>
+            <p class="alert mb-3" id="review-message" role="status" hidden></p>
+            <button class="btn btn-primary" type="submit">Добавить отзыв</button>
+          </form>
+        </div>
+      </div>
+      <template id="review-template">
+        <article class="p-3 p-md-4 border rounded-3 bg-white">
+          <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+            <h3 class="h6 mb-0" data-review-name></h3>
+            <span class="review__stars" data-review-rating></span>
+          </div>
+          <p class="user-text mb-2" data-review-text></p>
+          <div class="d-flex justify-content-between align-items-center gap-2">
+            <time class="small text-muted" data-review-date></time>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-review-delete>Удалить</button>
+          </div>
+        </article>
+      </template>
+    </section>
+
     <section class="stats py-4">
       <div class="container">
         <h2 class="h4 mb-1">Pet Steps в цифрах</h2>
@@ -213,6 +327,8 @@
             <li><a href="index.html">Главная</a></li>
             <li><a href="catalog.html">Услуги и цены</a></li>
             <li><a href="about.html">О нас</a></li>
+            <li><a href="index.html#reviews">Отзывы</a></li>
+            <li><a href="account.html">Мой питомец и заявки</a></li>
           </ul>
         </nav>
         <div class="text-break">
@@ -282,5 +398,6 @@
 
   <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/features.js"></script>
 </body>
 </html>

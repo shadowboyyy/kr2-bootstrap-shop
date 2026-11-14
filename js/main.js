@@ -166,18 +166,7 @@ if (serviceTitle) {
   window.addEventListener('hashchange', openReport);
 }
 
-const orderDate = document.querySelector('#order-date');
-
-if (orderDate) {
-  // Для московских услуг дата начинается по московскому времени.
-  const parts = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Europe/Moscow', year: 'numeric', month: '2-digit', day: '2-digit'
-  }).formatToParts();
-  const datePart = type => parts.find(part => part.type === type).value;
-  orderDate.min = datePart('year') + '-' + datePart('month') + '-' + datePart('day');
-}
-
-// Обе формы используют HTML-ограничения и подсказки Bootstrap.
+// Проверка формы обратной связи.
 document.querySelectorAll('[data-demo-form]').forEach(form => {
   const message = form.querySelector('[data-form-message]');
 
@@ -204,7 +193,7 @@ document.querySelectorAll('[data-demo-form]').forEach(form => {
     }
 
     form.reset();
-    const result = form.dataset.demoForm === 'booking' ? 'Демо-заявка принята.' : 'Демо-сообщение принято.';
+    const result = 'Демо-сообщение принято.';
     showMessage(result + ' Данные никуда не отправлены.', true);
   });
 

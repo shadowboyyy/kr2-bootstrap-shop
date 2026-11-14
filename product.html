@@ -35,12 +35,17 @@
             <li class="nav-item">
               <a class="nav-link" href="contacts.html">Контакты</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="account.html">Мой питомец</a>
+            </li>
           </ul>
         </div>
         <a class="btn btn-primary btn-sm text-nowrap order-1 order-lg-0 ms-1 ms-lg-3" href="product.html#booking">Заказать выгул</a>
       </div>
     </nav>
   </header>
+
+  <div id="storage-warning" class="container alert alert-warning mt-3" role="alert" hidden></div>
 
   <main class="container my-4 mb-5" id="main">
     <nav aria-label="Хлебные крошки">
@@ -91,8 +96,9 @@
             <h2 class="h4 mb-0" id="booking-title">Заявка на услугу</h2>
           </div>
           <div class="card-body p-3 p-md-4">
-            <div class="alert alert-info">Поля со звёздочкой обязательны. Это пробная запись.</div>
-            <form data-demo-form="booking" method="post" novalidate>
+            <div class="alert alert-info">Поля со звёздочкой обязательны. Заявка сохранится в этом браузере и появится в трекере.</div>
+            <p class="small text-muted" id="passport-booking-hint"><a href="account.html#passport">Создайте паспорт питомца</a>, чтобы заполнять заявку быстрее.</p>
+            <form id="booking-form" method="post" novalidate>
               <div class="row g-3">
                 <div class="col-12">
                   <label for="order-service" class="form-label">Услуга</label>
@@ -128,24 +134,39 @@
                   <input id="order-breed" name="breed" type="text" class="form-control" placeholder="Например, метис" required aria-describedby="order-breed-error">
                   <div class="invalid-feedback" id="order-breed-error">Укажите породу питомца.</div>
                 </div>
+                <div class="col-12">
+                  <fieldset class="calendar border rounded-3 p-3">
+                    <legend class="float-none w-auto px-1 h6">Календарь записи</legend>
+                    <p class="small text-muted mb-2">Выберите день и время по Москве. Заявки из этого браузера занимают время в календаре. Запись доступна на 90 дней вперёд.</p>
+                    <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+                      <button class="btn btn-sm btn-outline-primary" id="calendar-prev" type="button" aria-label="Предыдущий месяц">‹</button>
+                      <strong id="calendar-month" aria-live="polite"></strong>
+                      <button class="btn btn-sm btn-outline-primary" id="calendar-next" type="button" aria-label="Следующий месяц">›</button>
+                    </div>
+                    <div class="calendar__grid calendar__weekdays small text-muted" aria-hidden="true">
+                      <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+                    </div>
+                    <div class="calendar__grid" id="calendar-days" role="group" aria-label="Дни для записи"></div>
+                    <p class="small mt-3 mb-2" id="calendar-selection">Выберите день для просмотра времени.</p>
+                    <div class="d-flex flex-wrap gap-2" id="calendar-times" role="group" aria-label="Время для записи"></div>
+                  </fieldset>
+                </div>
                 <div class="col-12 col-md-6">
                   <label for="order-date" class="form-label">Дата *</label>
                   <input id="order-date" name="date" type="date" class="form-control" required aria-describedby="order-date-error">
-                  <div class="invalid-feedback" id="order-date-error">Выберите сегодня или более позднюю дату.</div>
+                  <div class="invalid-feedback" id="order-date-error">Выберите доступную дату в ближайшие 90 дней.</div>
                 </div>
                 <div class="col-12 col-md-6">
                   <label for="order-time" class="form-label">Время начала *</label>
                   <select id="order-time" name="time" class="form-select" required aria-describedby="order-time-error">
                     <option value="">Выберите время</option>
-                    <option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option>
-                    <option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option>
-                    <option>17:00</option><option>18:00</option><option>19:00</option><option>20:00</option>
+
                   </select>
                   <div class="invalid-feedback" id="order-time-error">Выберите время.</div>
                 </div>
                 <div class="col-12">
                   <label for="order-comment" class="form-label">Комментарий</label>
-                  <textarea id="order-comment" name="comment" class="form-control" rows="3"
+                  <textarea id="order-comment" name="comment" class="form-control" rows="3" maxlength="1000"
                     placeholder="Район, особенности питомца и пожелания"></textarea>
                 </div>
                 <div class="col-12">
@@ -157,6 +178,7 @@
                 </div>
                 <div class="col-12">
                   <div class="alert mb-3" data-form-message role="status" hidden></div>
+                  <a class="btn btn-outline-primary mb-3" id="booking-tracker-link" href="account.html#tracker" hidden>Перейти к моей заявке</a>
                   <div class="d-flex flex-wrap gap-2">
                     <button class="btn btn-primary" type="submit">Отправить заявку</button>
                     <button class="btn btn-outline-secondary" type="reset">Очистить</button>
@@ -185,6 +207,8 @@
             <li><a href="index.html">Главная</a></li>
             <li><a href="catalog.html">Услуги и цены</a></li>
             <li><a href="about.html">О нас</a></li>
+            <li><a href="index.html#reviews">Отзывы</a></li>
+            <li><a href="account.html">Мой питомец и заявки</a></li>
           </ul>
         </nav>
         <div class="text-break">
@@ -231,5 +255,6 @@
 
   <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/features.js"></script>
 </body>
 </html>

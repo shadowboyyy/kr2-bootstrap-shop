@@ -51,6 +51,8 @@ main[id], section[id], details[id] {
   --bs-btn-active-bg: var(--pet-green-dark);
   --bs-btn-active-border-color: var(--pet-green-dark);
   --bs-btn-focus-shadow-rgb: 36, 84, 67;
+  --bs-btn-disabled-bg: var(--pet-green);
+  --bs-btn-disabled-border-color: var(--pet-green);
 }
 
 .btn-outline-primary {
@@ -61,6 +63,8 @@ main[id], section[id], details[id] {
   --bs-btn-active-bg: var(--pet-green-dark);
   --bs-btn-active-border-color: var(--pet-green-dark);
   --bs-btn-focus-shadow-rgb: 36, 84, 67;
+  --bs-btn-disabled-color: var(--pet-green);
+  --bs-btn-disabled-border-color: var(--pet-green);
 }
 
 .site-header {
@@ -278,4 +282,94 @@ main[id], section[id], details[id] {
   border-radius: 0.75rem;
   background-color: var(--pet-lime);
   color: var(--pet-green);
+}
+
+/* Отзывы, паспорт питомца, календарь и трекер */
+.user-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.review__stars {
+  color: var(--pet-green);
+  white-space: nowrap;
+}
+
+.pet-passport__photo {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  background-color: var(--pet-lime);
+}
+
+.calendar {
+  min-width: 0;
+}
+
+.calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.3rem;
+}
+
+.calendar__weekdays {
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+.calendar__day {
+  min-height: 2.3rem;
+  border: 1px solid var(--pet-border);
+  border-radius: 0.35rem;
+  background-color: #fff;
+  color: var(--pet-green-dark);
+}
+
+.calendar__day[aria-pressed="true"] {
+  color: #fff;
+  background-color: var(--pet-green);
+  border-color: var(--pet-green);
+}
+
+.calendar__day:disabled {
+  color: #737b75;
+  background-color: #eee;
+  border-color: transparent;
+}
+
+.calendar__day[aria-current="date"] {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.tracker__steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.tracker__step {
+  padding-top: 0.6rem;
+  border-top: 3px solid var(--pet-border);
+  color: #69726c;
+  font-size: 0.85rem;
+}
+
+.tracker__step--done {
+  border-color: var(--pet-green);
+  color: var(--pet-green);
+}
+
+.tracker__step[aria-current="step"] {
+  font-weight: 700;
+}
+
+@media (max-width: 575.98px) {
+  .tracker__steps {
+    grid-template-columns: 1fr 1fr;
+  }
 }

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой питомец — Pet Steps</title>
+  <link rel="icon" href="images/paw.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body id="top">
+  <a class="visually-hidden-focusable skip-link" href="#main">К содержанию</a>
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Основное меню">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-1 gap-lg-2 me-0 me-lg-3" href="index.html">
+          <img src="images/paw.svg" width="32" height="32" alt=""> Pet Steps
+        </a>
+        <button class="navbar-toggler ms-auto px-1" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+          aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse order-2 order-lg-0" id="mainNavbar">
+          <ul class="navbar-nav ms-auto gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Услуги и цены</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts.html">Контакты</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="account.html">Мой питомец</a>
+            </li>
+          </ul>
+        </div>
+        <a class="btn btn-primary btn-sm text-nowrap order-1 order-lg-0 ms-1 ms-lg-3" href="product.html#booking">Заказать выгул</a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="storage-warning" class="container alert alert-warning mt-3" role="alert" hidden></div>
+
+  <main class="container my-4 mb-5" id="main">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Мой питомец</li>
+      </ol>
+    </nav>
+    <h1 class="display-6 fw-bold">Мой питомец</h1>
+    <p class="text-muted">Паспорт питомца и история записей сохраняются в этом браузере.</p>
+    <div class="d-flex flex-wrap gap-2 mb-4">
+      <a class="btn btn-outline-primary" href="#passport">Паспорт питомца</a>
+      <a class="btn btn-outline-primary" href="#tracker">Мои заявки</a>
+      <a class="btn btn-primary" href="catalog.html">Записаться на услугу</a>
+    </div>
+    <section id="passport" aria-labelledby="passport-title">
+      <h2 class="h3 mb-3" id="passport-title">Паспорт питомца</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="card p-4">
+            <img class="pet-passport__photo mb-3" id="pet-preview" src="images/paw.svg" alt="Фото питомца ещё не добавлено" width="240" height="240">
+            <h3 class="h4 user-text" id="pet-preview-name">Ваш питомец</h3>
+            <p class="text-muted user-text mb-2" id="pet-preview-breed">Добавьте кличку, породу и привычки.</p>
+            <p class="user-text mb-0" id="pet-preview-habits"></p>
+          </div>
+        </div>
+        <div class="col-12 col-md-8">
+          <form id="passport-form" class="p-3 p-md-4 border rounded-3 bg-white" novalidate>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="pet-name">Кличка *</label>
+                <input class="form-control" id="pet-name" name="name" maxlength="60" required>
+                <div class="invalid-feedback">Укажите кличку питомца.</div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="pet-kind">Вид питомца *</label>
+                <select class="form-select" id="pet-kind" name="kind" required>
+                  <option value="dog">Собака</option><option value="cat">Кошка</option>
+                </select>
+                <div class="invalid-feedback">Выберите вид питомца.</div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="pet-breed">Порода *</label>
+                <input class="form-control" id="pet-breed" name="breed" maxlength="80" placeholder="Например, метис" required>
+                <div class="invalid-feedback">Укажите породу питомца.</div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="pet-habits">Привычки и особенности</label>
+                <textarea class="form-control" id="pet-habits" name="habits" rows="3" maxlength="600" placeholder="Любит мячик, боится громких звуков…"></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="pet-photo">Фотография</label>
+                <input class="form-control" id="pet-photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="photo-hint">
+                <p class="form-text" id="photo-hint">JPEG, PNG или WebP до 5 МБ. Фото сохраняется вместе с паспортом.</p>
+                <button class="btn btn-sm btn-outline-secondary" id="pet-remove-photo" type="button">Убрать фото</button>
+              </div>
+              <div class="col-12">
+                <p class="alert mb-3" id="passport-message" role="status" hidden></p>
+                <div class="d-flex flex-wrap gap-2">
+                  <button class="btn btn-primary" type="submit">Сохранить паспорт</button>
+                  <button class="btn btn-outline-secondary" id="pet-delete" type="button">Удалить паспорт</button>
+                </div>
+                <p class="small text-muted mt-3 mb-0">Кличка, порода и привычки подставятся в новую заявку.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-5" id="tracker" aria-labelledby="tracker-title">
+      <h2 class="h3 mb-2" id="tracker-title">Мои заявки</h2>
+      <p class="text-muted">После записи здесь появятся номер, дата и статус заявки.</p>
+      <p class="small text-muted">Учебный трекер. Кнопка «Следующий этап» демонстрирует ход услуги. Статусы меняете вы.</p>
+      <p class="alert" id="tracker-message" role="status" hidden></p>
+      <div id="tracker-empty" class="p-4 bg-white border rounded-3">
+        <p>У вас пока нет заявок.</p>
+        <a href="catalog.html" class="btn btn-primary">Выбрать услугу</a>
+      </div>
+      <div class="vstack gap-3" id="booking-list"></div>
+      <template id="booking-template">
+        <article class="p-3 p-md-4 border rounded-3 bg-white">
+          <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+            <div>
+              <h3 class="h5" data-booking-title></h3>
+              <p class="small text-muted mb-0" data-booking-meta></p>
+            </div>
+            <span class="badge text-bg-success align-self-start" data-booking-status></span>
+          </div>
+          <p class="user-text" data-booking-pet></p>
+          <p class="user-text small text-muted" data-booking-comment hidden></p>
+          <ol class="tracker__steps list-unstyled" data-booking-steps></ol>
+          <p class="small text-muted" data-booking-note></p>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-outline-primary btn-sm" type="button" data-booking-next>Следующий этап (демо)</button>
+            <button class="btn btn-outline-secondary btn-sm" type="button" data-booking-cancel>Отменить заявку</button>
+            <a class="btn btn-primary btn-sm" href="index.html#reviews" data-booking-review hidden>Оставить отзыв</a>
+          </div>
+        </article>
+      </template>
+    </section>
+  </main>
+
+  <footer class="site-footer pt-5 pb-3">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-md-between gap-4">
+        <div class="site-footer__intro">
+          <a class="site-footer__brand d-inline-flex align-items-center gap-2 mb-3" href="index.html">
+            <img src="images/paw.svg" width="32" height="32" alt=""> Pet Steps
+          </a>
+          <p class="mb-0">Выгул, передержка, груминг и зооняня в Москве.</p>
+        </div>
+        <nav class="flex-shrink-0" aria-label="Разделы сайта">
+          <h2 class="h6 mb-3">Разделы</h2>
+          <ul class="list-unstyled vstack gap-2 mb-0">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Услуги и цены</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="index.html#reviews">Отзывы</a></li>
+            <li><a href="account.html">Мой питомец и заявки</a></li>
+          </ul>
+        </nav>
+        <div class="text-break">
+          <h2 class="h6 mb-3">Адрес и связь</h2>
+          <address class="vstack gap-2 mb-2">
+            <div class="site-footer__contact-line">
+              <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>
+              </svg>
+              <span>Кампус РТУ МИРЭА<br>Москва, проспект Вернадского, 78</span>
+            </div>
+            <div class="site-footer__contact-line">
+              <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a13 13 0 0 1-6-6l2-2-2-5Z"/>
+              </svg>
+              <span>Телефон кампуса: <a href="tel:+74996008080">+7 (499) 600-80-80</a></span>
+            </div>
+          </address>
+          <div class="site-footer__contact-line mb-2">
+            <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+              </svg>
+            <span>Запись на услуги: ежедневно с 09:00 до 20:00.</span>
+          </div>
+          <div class="site-footer__contact-line">
+            <svg class="site-footer__sticker" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>
+              </svg>
+            <span>Почта проекта: <a href="mailto:hello@petsteps.example">hello@petsteps.example</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom d-flex flex-wrap justify-content-between gap-2 mt-4 pt-3">
+        <small>© 2026 Pet Steps. Все права защищены.</small>
+      </div>
+    </div>
+  </footer>
+
+  <a class="btn btn-primary back-top" href="#top" hidden>Наверх</a>
+
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/features.js"></script>
+</body>
+</html>
